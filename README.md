@@ -1,4 +1,4 @@
-# SRT Translation API
+# SRT Translation
 
 This project provides an API to translate SRT subtitle files into Vietnamese using the Gemini API.
 
@@ -74,7 +74,7 @@ npm run dev
 
 ## Usage
 
-Once deployed, you can use web endpoint provided by Vercel. For example: https://your-vercel-endpoint
+Once deployed, you can use the web endpoint provided by Vercel. For example https://your-vercel-endpoint
 
 
 ## License
