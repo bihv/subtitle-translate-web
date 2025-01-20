@@ -12,8 +12,8 @@ This project provides an API to translate SRT subtitle files into Vietnamese usi
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/yourusername/srt-translation-api.git
-   cd srt-translation-api
+   git clone https://github.com/bihv/subtitle-translate-web.git
+   cd subtitle-translate-web
    ```
 
 2. Install dependencies:
