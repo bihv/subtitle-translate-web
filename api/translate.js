@@ -2,9 +2,6 @@ import dotenv from 'dotenv';
 import axios from 'axios/dist/node/axios.cjs';
 
 dotenv.config();
-
-const CHARACTER_PER_BATCH = 500;
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const axiosInstance = axios.create({
     timeout: 10000 
 });
@@ -16,7 +13,7 @@ export default async function handler(req, res) {
     }
 
     try {
-        const { inputContent } = req.body;
+        const { inputContent, apiKey } = req.body;
         const promt = "Translate the subtitles in this file into Vietnamese with the following requirements:\n" +
         "Maintain the original format, including sequence numbers, timestamps, and the number of lines.\n" +
         "The translations must match the context, culture, and situations occurring in the movie.\n" +
@@ -29,7 +26,7 @@ export default async function handler(req, res) {
             return;
         }
 
-        const translatedPart = await translateText(promt);
+        const translatedPart = await translateText(promt, apiKey);
         res.status(200).json({ translatedContent: translatedPart });
     } catch (error) {
         console.error(error);
@@ -54,36 +51,9 @@ function splitSRTContent(srtContent, charLimit) {
     return parts;
 }
 
-// async function translateText(text) {
-//     const response = await axios.post(
-//         `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${GEMINI_API_KEY}`,
-//         {
-//             contents: [
-//                 {
-//                     role: 'user',
-//                     parts: [{ text }]
-//                 }
-//             ],
-//             generationConfig: {
-//                 temperature: 0.7,
-//                 topK: 50,
-//                 topP: 0.9,
-//                 maxOutputTokens: 8192,
-//                 responseMimeType: 'text/plain'
-//             }
-//         },
-//         { headers: { 'Content-Type': 'application/json' } }
-//     );
-
-//     const candidates = response.data.candidates;
-//     if (candidates && candidates.length > 0) {
-//         return candidates[0].content.parts[0].text;
-//     }
-//     throw new Error('Translation failed');
-// }
-async function translateText(text) {
+async function translateText(text, apiKey) {
     const response = await axiosInstance.post(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${GEMINI_API_KEY}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${apiKey}`,
         {
             contents: [
                 {

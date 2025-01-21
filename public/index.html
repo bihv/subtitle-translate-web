@@ -11,6 +11,9 @@
   <p>Chọn file SRT và dịch sang tiếng Việt.</p>
 
   <div>
+    <label for="apiKey">Nhập Gemini API Key:</label>
+    <input type="text" id="apiKey" class="input-field" placeholder="Gemini API Key"/>
+    <br><br>
     <input type="file" id="srtFile" accept=".srt"/>
     <button id="translateBtn">Dịch</button>
     <p id="status"></p>
@@ -18,6 +21,8 @@
         <!-- Nội dung preview sẽ hiển thị tại đây -->
     </div>
     <a id="downloadLink" style="display: none;">Tải file đã dịch</a>
+    <br><br>
+    <a href="guide.html">Cách lấy Gemini API Key</a>
 </div>
 
   <script src="script.js"></script>

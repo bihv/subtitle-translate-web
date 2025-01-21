@@ -1,9 +1,15 @@
 document.getElementById("translateBtn").addEventListener("click", async () => {
+    const apiKey = document.getElementById('apiKey').value;
     const fileInput = document.getElementById("srtFile");
     const status = document.getElementById("status");
     const downloadLink = document.getElementById("downloadLink");
     const previewArea = document.getElementById("previewArea"); // Thêm phần này để hiển thị preview
 
+    if (!apiKey) {
+        alert('Vui lòng nhập Gemini API Key');
+        return;
+    }
+    
     if (!fileInput.files.length) {
         status.textContent = "Vui lòng chọn file SRT.";
         return;
@@ -94,7 +100,7 @@ document.getElementById("translateBtn").addEventListener("click", async () => {
                     const response = await fetch("/api/translate", {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ inputContent: parts[i] }),
+                        body: JSON.stringify({ inputContent: parts[i], apiKey: apiKey }),
                     });
 
                     if (!response.ok) throw new Error(`Lỗi khi dịch đoạn ${i + 1}`);
@@ -107,6 +113,8 @@ document.getElementById("translateBtn").addEventListener("click", async () => {
                     previewElement.innerHTML = translatedPart.replace(/\n/g, "<br>");
                     previewArea.appendChild(previewElement);
 
+                    // Auto scroll to the bottom
+                    previewArea.scrollTop = previewArea.scrollHeight;
                     success = true;
                 } catch (error) {
                     attempts++;
