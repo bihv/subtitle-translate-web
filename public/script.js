@@ -9,7 +9,7 @@ document.getElementById("translateBtn").addEventListener("click", async () => {
         alert('Vui lòng nhập Gemini API Key');
         return;
     }
-    
+
     if (!fileInput.files.length) {
         status.textContent = "Vui lòng chọn file SRT.";
         return;
@@ -120,7 +120,9 @@ document.getElementById("translateBtn").addEventListener("click", async () => {
                     attempts++;
                     console.error(`Attempt ${attempts} failed:`, error);
 
-                    if (attempts >= maxRetries) {
+                    if (attempts < maxRetries) {
+                        await new Promise(resolve => setTimeout(resolve, attempts * 1000));
+                    } else {
                         translatedParts.push(`// Lỗi khi dịch đoạn ${i + 1}`);
                         const errorElement = document.createElement("p");
                         errorElement.textContent = `Lỗi khi dịch đoạn ${i + 1}`;
