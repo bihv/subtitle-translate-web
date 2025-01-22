@@ -30,6 +30,21 @@ p {
 }
 
 .preview-area {
-  max-height: calc(100vh - 300px);
+  max-height: calc(100vh - 450px);
   overflow-y: auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+.row-footer{
+  justify-content: center;
+  align-items: center;
 }

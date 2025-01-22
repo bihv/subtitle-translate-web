@@ -54,18 +54,35 @@
                 </div>
                 <!-- Right Column -->
                 <div id="resultContainer" class="col-md-6" style="display: none;">
-                  <h2>Kết quả</h2>
-                  <div id="previewArea" class="border p-3 preview-area">
-                    <!-- Nội dung preview sẽ hiển thị tại đây -->
-                  </div>
-                  <div id="progressContainer" class="progress mt-3">
-                    <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <p id="status" class="mt-3"></p>
-                  <a id="downloadLink" class="btn btn-success mt-3" style="display: none;">Tải file đã dịch</a>
+                    <h2>Kết quả</h2>
+                    <div id="previewArea" class="border p-3 preview-area">
+                        <!-- Nội dung preview sẽ hiển thị tại đây -->
+                    </div>
+                    <div id="progressContainer" class="progress mt-3">
+                        <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <p id="status" class="mt-3"></p>
+                    <a id="downloadLink" class="btn btn-success mt-3" style="display: none;">Tải file đã dịch</a>
                 </div>
             </div>
         </div>
+        <!-- Footer -->
+        <footer class="bg-light text-lg-start mt-auto">
+            <div class="container p-2">
+                <div class="row row-footer">
+                    <div>
+                        <h5 class="text-uppercase">Liên hệ</h5>
+                        <p>
+                            Nếu bạn có bất kỳ câu hỏi hoặc góp ý nào, vui lòng liên hệ với mình qua 
+                            <a href="https://forms.gle/vofHMMKnsn3rUeNbA" target="_blank">Google Form</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center p-1" style="background-color: rgba(0, 0, 0, 0.2);">
+                © <span id="currentYear"></span> SRT Translator
+            </div>
+        </footer>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
