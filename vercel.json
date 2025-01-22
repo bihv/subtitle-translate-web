@@ -1,8 +1,17 @@
 {
-    "version": 2,
-    "routes": [
-      { "src": "/api/translate", "dest": "/api/translate.js" },
-      { "src": "/(.*)", "dest": "/public/$1" }
-    ]
-  }
-  
+  "version": 2,
+  "rewrites": [
+      {
+          "source": "/api/translate",
+          "destination": "/api/translate.js"
+      },
+      {
+          "source": "/",
+          "destination": "/index.html"
+      },
+      {
+          "source": "/guide",
+          "destination": "/guide.html"
+      }
+  ]
+}

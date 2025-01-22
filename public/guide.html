@@ -3,36 +3,50 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>How to Get Gemini API Key</title>
+        <title>Cách lấy Gemini API Key</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     </head>
-    <body data-new-gr-c-s-check-loaded="14.1217.0" data-gr-ext-installed="" style="
-        width: 100%;
-        box-sizing: content-box;
-        ">
-        <h1>Hướng dẫn lấy Gemini API Key</h1>
-        <p>Để sử dụng SRT Translator, bạn cần có Gemini API Key. Dưới đây là cách để lấy API Key:</p>
-        <ol>
-            <li>Vào trang <a href="https://aistudio.google.com/app/u/1/apikey" target="_blank">Google AI Studio</a>.</li>
-            <li>Đăng nhập tài khoản Google</li>
-            <li>Click nút "Create API key" và làm theo hình dưới đây</li>
-        </ol>
-        <img src="/images/create2.png" alt="" style="
-            display: block;
-            max-width: 100%;
-            width: 100%;
-            object-fit: contain;
-            box-sizing: content-box;
-            ">
-        <br>
-        <img src="/images/apikey.png" alt="" style="
-            display: block;
-            max-width: 100%;
-            width: 100%;
-            object-fit: contain;
-            box-sizing: content-box;
-            ">
-        <p>Copy  API key và quay lại <a href="index.html">SRT Translator</a> để sử dụng</p>
-        <p>Chú ý: chỉ cần tạo API key 1 lần, có thể tái sử dụng ở những lần sau.</p>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="/">
+            <img src="images/logo.png" alt="Logo" style="height: 30px; margin-right: 10px;">
+            SRT Translator
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/guide">Cách lấy Gemini API Key</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container mt-5 pt-5">
+            <h1>Hướng dẫn lấy Gemini API Key</h1>
+            <p>Để sử dụng SRT Translator, bạn cần có Gemini API Key. Dưới đây là cách để lấy API Key:</p>
+            <ol>
+                <li>Vào trang <a href="https://aistudio.google.com/app/u/1/apikey" target="_blank">Google AI Studio</a>.</li>
+                <li>Đăng nhập tài khoản Google</li>
+                <li>Click nút "Create API key" và làm theo hình dưới đây</li>
+                <img src="images/create2.png" alt="Create API Key" class="img-fluid">
+                <br>
+                <li>Copy API key và quay lại <a href="index.html">SRT Translator</a> để sử dụng</li>
+                <img src="images/apikey.png" alt="API Key" class="img-fluid">
+            </ol>
+            <div class="alert alert-warning" role="alert">
+                Chú ý: chỉ cần tạo API key 1 lần, có thể tái sử dụng ở những lần sau.
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </body>
 </html>

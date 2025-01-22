@@ -1,34 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SRT Translator</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <h1>SRT Translator</h1>
-  <p>Chọn file SRT và dịch sang tiếng Việt.</p>
-
-  <div>
-    <label for="apiKey">Nhập Gemini API Key:</label>
-    <input type="text" id="apiKey" class="input-field" placeholder="Gemini API Key"/>
-    <br><br>
-    <input type="file" id="srtFile" accept=".srt"/>
-    <button id="translateBtn">Dịch</button>
-    <p id="status"></p>
-    <div id="previewArea" style="border: 1px solid #ddd; padding: 10px; margin: 10px 0; max-height: 300px; overflow-y: auto;">
-        <!-- Nội dung preview sẽ hiển thị tại đây -->
-    </div>
-    <a id="downloadLink" style="display: none;">Tải file đã dịch</a>
-    <br><br>
-    <a href="guide.html">Cách lấy Gemini API Key</a>
-</div>
-
-  <script src="script.js"></script>
-  <script>
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/insights/script.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SRT Translator</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="/">
+            <img src="images/logo.png" alt="Logo" style="height: 30px; margin-right: 10px;">
+            SRT Translator
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/guide">Cách lấy Gemini API Key</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container mt-5 pt-5">
+            <div class="row">
+                <!-- Left Column -->
+                <div class="col-md-6">
+                    <h2>Cấu hình</h2>
+                    <div class="form-group">
+                        <label for="apiKey">1. Gemini API Key</label>
+                        <input type="text" id="apiKey" class="form-control" placeholder="Gemini API Key"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="apiKey">2. Tuỳ chỉnh promt</label>
+                        <textarea type="text" id="customPrompt" class="form-control" placeholder="Tuỳ chỉnh promt, bỏ trống để sử dụng mặc định"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="srtFile">3. Chọn file SRT:</label>
+                        <input type="file" id="srtFile" class="form-control-file" accept=".srt"/>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberConfig">
+                        <label class="form-check-label" for="rememberConfig">Ghi nhớ cấu hình</label>
+                    </div>
+                    <button id="translateBtn" class="btn btn-primary">Dịch</button>
+                </div>
+                <!-- Right Column -->
+                <div id="resultContainer" class="col-md-6" style="display: none;">
+                  <h2>Kết quả</h2>
+                  <div id="previewArea" class="border p-3 preview-area">
+                    <!-- Nội dung preview sẽ hiển thị tại đây -->
+                  </div>
+                  <div id="progressContainer" class="progress mt-3">
+                    <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <p id="status" class="mt-3"></p>
+                  <a id="downloadLink" class="btn btn-success mt-3" style="display: none;">Tải file đã dịch</a>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="script.js"></script>
+        <script>
+            window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+        </script>
+        <script defer src="/_vercel/insights/script.js"></script>
+    </body>
 </html>
