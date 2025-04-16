@@ -1,5 +1,9 @@
 # SRT Translation
 
+> ⚠️ **This project is no longer maintained.**  
+> Development has moved to [subtitle-translate-web-v2](https://github.com/bihv/subtitle-translate-web-v2).
+
+
 This project provides an API to translate SRT subtitle files into Vietnamese using the Gemini API.
 
 ## Prerequisites
